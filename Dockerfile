@@ -24,8 +24,13 @@ ENV PATH=$NVM_DIR/versions/node/v24.13.0/bin:/home/opencode/.npm-global/bin:$PAT
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash && \
     . $NVM_DIR/nvm.sh && \
     nvm install 24.13.0 && \
+    nvm alias default 24.13.0 && \
+    echo 'source $NVM_DIR/nvm.sh' >> ~/.bashrc && \
+    . $NVM_DIR/nvm.sh && \
     npm config set prefix '/home/opencode/.npm-global' && \
-    npm install -g opencode ohmyopencode && \
+    . $NVM_DIR/nvm.sh && \
+    npm install -g opencode && \
+    . $NVM_DIR/nvm.sh && \
     npm cache clean --force
 
 WORKDIR /app

@@ -1,12 +1,12 @@
 # OpenCode Docker 镜像
 
-这个 Dockerfile 用于构建基于 Alpine 的 Docker 镜像，包含 OpenCode、Node.js v24.13.0 和 ohmyopencode。
+这个 Dockerfile 用于构建基于 Alpine 的 Docker 镜像，包含 OpenCode 和 Node.js v24.13.0。
 
 ## 镜像特性
 
 - **基础镜像**: Alpine Linux（最小化镜像体积）
 - **Node.js 版本**: v24.13.0（通过 nvm 安装）
-- **全局包**: opencode, ohmyopencode
+- **全局包**: opencode
 - **用户**: opencode（非 root 用户运行）
 - **工作目录**: `/app`
 
@@ -44,7 +44,7 @@ which opencode
 
 ### 验证全局包
 ```bash
-npm list -g opencode ohmyopencode
+npm list -g opencode
 ```
 
 ## 使用说明
@@ -83,7 +83,7 @@ export OPENCODE_MODEL="gpt-4"
 - sudo
 - openssh-client
 - opencode
-- ohmyopencode
+
 
 ## 故障排除
 

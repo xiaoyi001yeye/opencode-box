@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This repository contains a Dockerfile for building an Alpine-based Docker image with OpenCode, Node.js v24.13.0, and ohmyopencode. The image is optimized for running OpenCode in a containerized environment.
+This repository contains a Dockerfile for building an Alpine-based Docker image with OpenCode and Node.js v24.13.0. The image is optimized for running OpenCode in a containerized environment.
 
 ## Build Commands
 
@@ -98,10 +98,10 @@ npm -v
 opencode --version
 ```
 
-### Verify ohmyopencode
+### Verify OpenCode installation
 ```bash
 which opencode
-npm list -g opencode ohmyopencode
+npm list -g opencode
 ```
 
 ## Adding New Packages
@@ -118,7 +118,7 @@ RUN apk add --no-cache \
 ### npm packages
 Add to the npm install command:
 ```dockerfile
-npm install -g opencode ohmyopencode <new-package>
+npm install -g opencode <new-package>
 ```
 
 ### Build dependencies
